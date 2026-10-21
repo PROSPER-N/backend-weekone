@@ -19,6 +19,17 @@ app.get("/search", (req, res) => {
 })
 
 
+app.get("/greet/:name", (req, res) => {
+    const name = Number(req.params.name);
+    res.send({message: `Akwabaa, ${name}!`})
+})
+
+app.get("/add", (req, res) => { 
+    const a = Number(req.query.a);
+    const b = Number(req.query.b);
+
+    res.send({result: a + b})
+});
 
 
 app.listen(PORT, (error) => {
